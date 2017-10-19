@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mrs
+    username: mrs
+    password: mrs
+    sql-script-encoding: UTF-8
+#    separator: /;
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+  messages:
+    basename: i18n/application-messages
+    cache-seconds: -1
+    encoding: UTF-8
+  thymeleaf:
+    mode: HTML
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE

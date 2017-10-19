@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+	<h3>ユーザー登録フォーム</h3>
+	<form th:action="@{/user/create/?confirm}" th:object="${userCreateForm}" method="POST">
+		<table>
+			<tr>
+				<th>loginId</th>
+				<td><input type="text" id="loginId" name="loginId" value="" /></td>
+				<td th:if="${#fields.hasErrors('loginId')}" th:errors="*{loginId}">loginId Error</td>
+			</tr>
+			<tr>
+				<th>password</th>
+				<td><input type="password" id="password" name="password" value="" /></td>
+				<td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">password Error</td>
+			</tr>
+			<tr>
+				<th>firstName</th>
+				<td><input type="text" id="firstName" name="firstName" value="" /></td>
+				<td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">firstName Error</td>
+			</tr>
+			<tr>
+				<th>lastName</th>
+				<td><input type="text" id="lastName" name="lastName" value="" /></td>
+				<td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">lastName Error</td>
+			</tr>
+		</table>
+
+		<input type="submit" id="confirm" name="confirm"
+			value="Go to confirmation page" />
+	</form>
+	<a th:href="@{'/rooms/'}">一覧に戻る</a>
+</body>
+</html>

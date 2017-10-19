@@ -1,0 +1,5 @@
+ALTER TABLE USR ADD COLUMN user_id numeric(8,0);
+ALTER TABLE USR ADD COLUMN Registered_Date TIMESTAMP;
+ALTER TABLE USR ADD COLUMN Registered_user_id numeric(8,0);
+ALTER TABLE USR ADD COLUMN update_Date TIMESTAMP;
+ALTER TABLE USR ADD COLUMN update_user_id numeric(8,0);

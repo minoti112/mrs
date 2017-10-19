@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title></title>
+</head>
+<body>
+	<h3>ユーザー登録確認</h3>
+	<form th:action="@{/user/create/?finish}" th:object="${userCreateForm}" method="POST">
+		<table>
+			<tr>
+				<th>loginId</th>
+				<td th:text="*{loginId}"><input type="hidden" id="loginId" name="loginId" th:value="${userCreateForm.getLoginId()} /></td>
+			</tr>
+			<tr>
+				<th>password</th>
+				<td><input type="password" id="password" name="password" value="" /></td>
+			</tr>
+			<tr>
+				<th>firstName</th>
+				<td><input type="text" id="firstName" name="firstName" value="" /></td>
+			</tr>
+			<tr>
+				<th>lastName</th>
+				<td><input type="text" id="lastName" name="lastName" value="" /></td>
+			</tr>
+		</table>
+
+		<input type="submit" id="confirm" name="confirm"
+			value="Go to confirmation page" />
+	</form>
+	<a th:href="@{'/rooms/'}">一覧に戻る</a>
+</body>
+</html>
